@@ -41,7 +41,9 @@
 		}
 
 		$.fn.autosize = function (options) {
-			options = $.extend({}, defaults, options || {});
+			options = $.extend({}, defaults, options || {
+				store: 'body'
+			});
 
 			return this.each(function () {
 				var
@@ -139,7 +141,7 @@
 					mirror.style[copyStyle[i]] = $ta.css(copyStyle[i]);
 				}
 
-				$('body').append(mirror);
+				$(options.store).append(mirror);
 
 				if (onpropertychange in ta) {
 					if (oninput in ta) {
