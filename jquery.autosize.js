@@ -7,7 +7,8 @@
 	defaults = {
 		className: 'autosizejs',
 		append: "",
-		callback: false
+		callback: false,
+		store: 'body'
 	},
 	hidden = 'hidden',
 	borderBox = 'border-box',
@@ -41,9 +42,7 @@
 		}
 
 		$.fn.autosize = function (options) {
-			options = $.extend({}, defaults, options || {
-				store: 'body'
-			});
+			options = $.extend({}, defaults, options || {});
 
 			return this.each(function () {
 				var
